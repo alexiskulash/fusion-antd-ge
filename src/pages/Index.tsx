@@ -105,7 +105,7 @@ const Index = () => {
         </Sider>
 
         <Content style={{ padding: "16px", backgroundColor: "#2c2c2c" }}>
-          <Row gutter={16}>
+          <Row gutter={[16, 16]}>
             <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
                 title="VidOps"
