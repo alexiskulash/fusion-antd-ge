@@ -60,13 +60,35 @@ const Index = () => {
           Medical Scheduler
         </div>
         <Space>
-          <Button icon={<SearchOutlined />} size="small">
+          <Button
+            icon={<SearchOutlined />}
+            size="small"
+            style={{
+              backgroundColor: "#4a4a4a",
+              borderColor: "#666",
+              color: "white",
+            }}
+          >
             Search by Name, ID, SSN, Description, Proc Code
           </Button>
-          <Button type="primary" size="small">
+          <Button
+            type="primary"
+            size="small"
+            style={{
+              backgroundColor: "#1890ff",
+              borderColor: "#1890ff",
+            }}
+          >
             Patient Registration
           </Button>
-          <Button type="default" size="small">
+          <Button
+            size="small"
+            style={{
+              backgroundColor: "#4a4a4a",
+              borderColor: "#666",
+              color: "white",
+            }}
+          >
             Program Selection
           </Button>
         </Space>
