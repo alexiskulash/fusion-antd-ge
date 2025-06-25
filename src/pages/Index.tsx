@@ -453,7 +453,7 @@ const Index = () => {
                   style={{ width: "100%" }}
                 >
                   <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <Space size="middle">
+                    <Space size="middle" wrap>
                       <Button
                         icon={<SaveOutlined />}
                         style={{
@@ -477,7 +477,7 @@ const Index = () => {
                     </Space>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <Space size="middle">
+                    <Space size="middle" wrap>
                       <Button.Group style={{ margin: "0 1.5em 0 2em", justifyContent: "center", alignItems: "flex-start" }}>
                         <Button
                           style={{
