@@ -318,6 +318,13 @@ const Index = () => {
 
             <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
+                title="Examination Information"
+                size="small"
+                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
+                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
+                bodyStyle={{ backgroundColor: "#3a3a3a" }}
+              >
+                <Form layout="vertical" size="small">
                   <Form.Item
                     label={
                       <Text style={{ color: "white" }}>Accession Nr.</Text>
@@ -471,47 +478,53 @@ const Index = () => {
                       Cancel
                     </Button>
                     <Button icon={<DeleteOutlined />}>Delete</Button>
-                  </Space>
-                </Col>
-                <Col xs={18} sm={18} md={18} lg={18} xl={18}>
-                  <Space size="middle" wrap>
-                    
-                      <Button
-                        style={{
-                          backgroundColor: "#595959",
-                          borderColor: "#595959",
-                          color: "white",
-                        }}
-                      >
-                        Local Data
-                      </Button>
-                      <Button
-                        style={{
-                          backgroundColor: "#595959",
-                          borderColor: "#595959",
-                          color: "white",
-                        }}
-                      >
-                        Prior Studies
-                      </Button>
-                    
                     <Button
-                      type="primary"
                       style={{
-                        borderColor: "#ff7f00",
-                        boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                        backgroundColor: "#595959",
+                        borderColor: "#595959",
+                        color: "white",
                       }}
                     >
-                      Exam
+                      Local Data
+                    </Button>
+                    <Button
+                      style={{
+                        backgroundColor: "#595959",
+                        borderColor: "#595959",
+                        color: "white",
+                      }}
+                    >
+                      Prior Studies
                     </Button>
                   </Space>
                 </Col>
+                <Col
+                  xs={6}
+                  sm={6}
+                  md={6}
+                  lg={6}
+                  xl={6}
+                  style={{ display: "flex", justifyContent: "flex-end" }}
+                >
+                  <Button
+                    type="primary"
+                    style={{
+                      backgroundColor: "#ff7f00",
+                      borderColor: "#ff7f00",
+                      boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                    }}
+                  >
+                    Exam
+                  </Button>
+                </Col>
               </Row>
             </div>
-                6:43:11 PM
+            <div style={{ textAlign: "right", marginTop: "8px" }}>
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
+            </div>
+          </Card>
         </Content>
       </Layout>
     </Layout>
