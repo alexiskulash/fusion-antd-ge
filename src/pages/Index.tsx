@@ -48,7 +48,20 @@ const Index = () => {
   ];
 
   return (
-    <Layout style={{ minHeight: "100vh", backgroundColor: "#2c2c2c" }}>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
+        token: {
+          colorBgContainer: "#3a3a3a",
+          colorBgLayout: "#2c2c2c",
+          colorBgElevated: "#4a4a4a",
+          colorText: "white",
+          colorTextSecondary: "#b8b8b8",
+          colorBorder: "#666",
+        },
+      }}
+    >
+      <Layout style={{ minHeight: "100vh", backgroundColor: "#2c2c2c" }}>
       <Header
         style={{
           backgroundColor: "#1f1f1f",
