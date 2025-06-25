@@ -452,8 +452,8 @@ const Index = () => {
                   <Button>Cancel</Button>
                   <Button icon={<DeleteOutlined />}>Delete</Button>
                   <Button type="primary">Local Data</Button>
-                  <Button>Prior Data</Button>
-                  <Button>Prior Data</Button>
+                  <Button>Prior Studies</Button>
+                  <Button>Exam</Button>
                 </Space>
               </Col>
             </Row>
