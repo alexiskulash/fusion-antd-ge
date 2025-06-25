@@ -90,8 +90,8 @@ const Index = () => {
               type="primary"
               size="small"
               style={{
-                backgroundColor: "#1890ff",
-                borderColor: "#1890ff",
+                backgroundColor: "#595959",
+                borderColor: "#595959",
               }}
             >
               Patient Registration
