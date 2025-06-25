@@ -58,6 +58,10 @@ const Index = () => {
           colorText: "white",
           colorTextSecondary: "#b8b8b8",
           colorBorder: "#666",
+          colorPrimary: "#595959",
+          colorPrimaryBg: "#4a4a4a",
+          colorPrimaryBgHover: "#555",
+          colorPrimaryHover: "#666",
         },
       }}
     >
