@@ -510,7 +510,7 @@ const Index = () => {
             </div>
                 6:43:11 PM
               <Text style={{ color: "white", fontSize: "12px" }}>
-            </div>
+                6:43:11 PM
           </Card>
         </Content>
       </Layout>
