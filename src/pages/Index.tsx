@@ -446,7 +446,6 @@ const Index = () => {
                   Mandatory Information
                 </Text>
               </div>
-              <div style={{ marginBottom: "16px" }}>
                 <Row
                   justify="space-between"
                   align="middle"
