@@ -23,7 +23,7 @@ import {
 } from "@ant-design/icons";
 
 const { Sider, Content, Header } = Layout;
-const { Title, Text } = Typography;
+const { Text } = Typography;
 const { Option } = Select;
 const { TextArea } = Input;
 
@@ -73,7 +73,12 @@ const Index = () => {
       </Header>
 
       <Layout>
-        <Sider width={240} breakpoint="lg" collapsedWidth="0" style={{ backgroundColor: "#3a3a3a" }}>
+        <Sider
+          width={240}
+          breakpoint="lg"
+          collapsedWidth="0"
+          style={{ backgroundColor: "#3a3a3a" }}
+        >
           <div style={{ padding: "16px", color: "white" }}>
             <div style={{ marginBottom: "16px" }}>
               <Text style={{ color: "white", fontSize: "14px" }}>Patients</Text>
@@ -151,7 +156,7 @@ const Index = () => {
                     }
                   >
                     <Row gutter={8}>
-                      <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                         <Input placeholder="MM/yyyy" />
                       </Col>
                       <Col xs={16} sm={16} md={16} lg={16} xl={16}>
@@ -446,72 +451,71 @@ const Index = () => {
                   Mandatory Information
                 </Text>
               </div>
-                <Row
-                  justify="space-between"
-                  align="middle"
-                  style={{ width: "100%" }}
-                >
-                  <div style={{ marginBottom: "16px" }}>
-                    <Space size="middle" wrap>
+              <Row
+                justify="space-between"
+                align="middle"
+                style={{ width: "100%" }}
+              >
+                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                  <Space size="middle" wrap>
+                    <Button
+                      icon={<SaveOutlined />}
+                      style={{
+                        backgroundColor: "#f5f5f5",
+                        borderColor: "#d9d9d9",
+                        color: "#000",
+                      }}
+                    >
+                      Save
+                    </Button>
+                    <Button
+                      style={{
+                        backgroundColor: "#f5f5f5",
+                        borderColor: "#d9d9d9",
+                        color: "#000",
+                      }}
+                    >
+                      Cancel
+                    </Button>
+                    <Button icon={<DeleteOutlined />}>Delete</Button>
+                  </Space>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                  <Space size="middle" wrap>
+                    <Button.Group>
                       <Button
-                        icon={<SaveOutlined />}
                         style={{
-                          backgroundColor: "#f5f5f5",
-                          borderColor: "#d9d9d9",
-                          color: "#000",
+                          backgroundColor: "#595959",
+                          borderColor: "#595959",
+                          color: "white",
                         }}
                       >
-                        Save
+                        Local Data
                       </Button>
                       <Button
                         style={{
-                          backgroundColor: "#f5f5f5",
-                          borderColor: "#d9d9d9",
-                          color: "#000",
+                          backgroundColor: "#595959",
+                          borderColor: "#595959",
+                          color: "white",
                         }}
                       >
-                        Cancel
+                        Prior Studies
                       </Button>
-                      <Button icon={<DeleteOutlined />}>Delete</Button>
-                    </Space>
-                  </Col>
-                  <div style={{ marginBottom: "16px" }}>
-                    <Space size="middle" wrap>
-                      <Button.Group style={{ margin: "0 1rem 0 1rem", justifyContent: "center", alignItems: "flex-start" }}>
-                        <Button
-                          style={{
-                            backgroundColor: "#595959",
-                            borderColor: "#595959",
-                            color: "white",
-                          }}
-                        >
-                          Local Data
-                        </Button>
-                        <Button
-                          style={{
-                            backgroundColor: "#595959",
-                            borderColor: "#595959",
-                            color: "white",
-                          }}
-                        >
-                          Prior Studies
-                        </Button>
-                      </Button.Group>
-                      <Button
-                        type="primary"
-                        style={{
-                          backgroundColor: "#ff7f00",
-                          borderColor: "#ff7f00",
-                          boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)", marginLeft: "auto",
-                        }}
-                      >
-                        Exam
-                      </Button>
-                    </Space>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+                    </Button.Group>
+                    <Button
+                      type="primary"
+                      style={{
+                        backgroundColor: "#ff7f00",
+                        borderColor: "#ff7f00",
+                        boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                      }}
+                    >
+                      Exam
+                    </Button>
+                  </Space>
+                </Col>
+              </Row>
+            </div>
             <div style={{ textAlign: "right", marginTop: "8px" }}>
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
@@ -520,6 +524,7 @@ const Index = () => {
           </Card>
         </Content>
       </Layout>
+    </Layout>
   );
 };
 
