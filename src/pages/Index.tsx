@@ -1,184 +1,488 @@
+import React, { useState } from "react";
 import {
-  Button,
+  Layout,
   Card,
-  Space,
-  Typography,
-  Spin,
-  Row,
-  Col,
-  Divider,
-  Tag,
-  Avatar,
-  Badge,
+  Form,
   Input,
   Select,
   DatePicker,
-  Switch,
-  Slider,
-  Rate,
-  Progress,
+  InputNumber,
+  Radio,
+  Checkbox,
+  Button,
+  Typography,
+  Divider,
+  Space,
+  Row,
+  Col,
+  Table,
+  Tag,
   Alert,
-  Tooltip,
+  Switch,
 } from "antd";
 import {
-  UserOutlined,
-  MailOutlined,
-  PhoneOutlined,
-  HomeOutlined,
-  StarOutlined,
-  HeartOutlined,
   SearchOutlined,
+  SaveOutlined,
+  DeleteOutlined,
+  UserOutlined,
+  MedicineBoxOutlined,
+  ExperimentOutlined,
 } from "@ant-design/icons";
 
-const { Title, Paragraph, Text } = Typography;
+const { Sider, Content, Header } = Layout;
+const { Title, Text } = Typography;
 const { Option } = Select;
+const { TextArea } = Input;
 
 const Index = () => {
+  const [form] = Form.useForm();
+  const [selectedPatient, setSelectedPatient] = useState("VidOps");
+
+  // Sample patient data
+  const patients = [
+    { key: "1", patient: "VidOps", procedure: "4/28/2022, 20:41" },
+  ];
+
+  const patientColumns = [
+    {
+      title: "Patient",
+      dataIndex: "patient",
+      key: "patient",
+    },
+    {
+      title: "Procedure",
+      dataIndex: "procedure",
+      key: "procedure",
+    },
+  ];
+
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#f5f5f5",
-        padding: "24px",
-      }}
-    >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {/* Header Section */}
-        <Card style={{ marginBottom: "24px" }}>
-          <div style={{ textAlign: "center" }}>
-            <Avatar
-              size={64}
-              icon={<UserOutlined />}
-              style={{ marginBottom: "16px" }}
+    <Layout style={{ minHeight: "100vh", backgroundColor: "#2c2c2c" }}>
+      {/* Header */}
+      <Header
+        style={{
+          backgroundColor: "#1f1f1f",
+          padding: "0 16px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>
+          Medical Scheduler
+        </div>
+        <Space>
+          <Button icon={<SearchOutlined />} size="small">
+            Search by Name, ID, SSN, Description, Proc Code
+          </Button>
+          <Button type="primary" size="small">
+            Patient Registration
+          </Button>
+          <Button type="default" size="small">
+            Program Selection
+          </Button>
+        </Space>
+      </Header>
+
+      <Layout>
+        {/* Left Sidebar - Patient List */}
+        <Sider width={240} style={{ backgroundColor: "#3a3a3a" }}>
+          <div style={{ padding: "16px", color: "white" }}>
+            <div style={{ marginBottom: "16px" }}>
+              <Text style={{ color: "white", fontSize: "14px" }}>Patients</Text>
+              <Text
+                style={{ color: "white", fontSize: "12px", marginLeft: "8px" }}
+              >
+                Schedule - 1T Aug @8:05:37 PM
+              </Text>
+            </div>
+
+            <Table
+              dataSource={patients}
+              columns={patientColumns}
+              size="small"
+              pagination={false}
+              style={{ backgroundColor: "#4a4a4a" }}
+              rowSelection={{
+                type: "radio",
+                selectedRowKeys: ["1"],
+              }}
             />
-            <Title level={2}>
-              <Spin
-                indicator={
-                  <StarOutlined spin style={{ fontSize: 24, marginRight: 8 }} />
-                }
-              />
-              Welcome to Ant Design
-            </Title>
-            <Paragraph>
-              Your app is now powered by Ant Design - the world's second most
-              popular React UI library.
-            </Paragraph>
-            <Space>
-              <Tag color="blue">React</Tag>
-              <Tag color="volcano">TypeScript</Tag>
-              <Tag color="green">Ant Design</Tag>
-              <Tag color="orange">Vite</Tag>
-            </Space>
-          </div>
-        </Card>
 
-        {/* Component Showcase */}
-        <Row gutter={[16, 16]}>
-          {/* Form Components */}
-          <Col xs={24} md={12} lg={8}>
-            <Card title="Form Components" extra={<Badge count={5} />}>
-              <Space direction="vertical" style={{ width: "100%" }}>
-                <Input
-                  placeholder="Enter your name"
-                  prefix={<UserOutlined />}
-                />
-                <Input
-                  placeholder="Enter your email"
-                  prefix={<MailOutlined />}
-                />
-                <Select defaultValue="option1" style={{ width: "100%" }}>
-                  <Option value="option1">Option 1</Option>
-                  <Option value="option2">Option 2</Option>
-                  <Option value="option3">Option 3</Option>
-                </Select>
-                <DatePicker style={{ width: "100%" }} />
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text>Enable notifications</Text>
-                  <Switch defaultChecked />
-                </div>
-              </Space>
-            </Card>
-          </Col>
-
-          {/* Interactive Components */}
-          <Col xs={24} md={12} lg={8}>
-            <Card
-              title="Interactive Elements"
-              extra={<HeartOutlined style={{ color: "#ff4d4f" }} />}
+            <div
+              style={{ marginTop: "16px", color: "white", fontSize: "12px" }}
             >
-              <Space direction="vertical" style={{ width: "100%" }}>
-                <div>
-                  <Text>Rating:</Text>
-                  <Rate defaultValue={4} />
+              Waiting for scan instructions.
+            </div>
+          </div>
+        </Sider>
+
+        {/* Main Content Area */}
+        <Content style={{ padding: "16px", backgroundColor: "#2c2c2c" }}>
+          <Row gutter={16}>
+            {/* VidOps Section */}
+            <Col span={8}>
+              <Card
+                title="VidOps"
+                size="small"
+                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
+                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
+                bodyStyle={{ backgroundColor: "#3a3a3a" }}
+              >
+                <Form layout="vertical" size="small">
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Last Name</Text>}
+                  >
+                    <Input defaultValue="VidOps" />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>First Name</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Title</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Suffix</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Middle Name</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Patient ID</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={
+                      <Text style={{ color: "white" }}>Date of Birth</Text>
+                    }
+                  >
+                    <Row gutter={8}>
+                      <Col span={8}>
+                        <Input placeholder="MM/yyyy" />
+                      </Col>
+                      <Col span={16}>
+                        <DatePicker style={{ width: "100%" }} />
+                      </Col>
+                    </Row>
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Age</Text>}
+                  >
+                    <InputNumber style={{ width: "100%" }} />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Sex</Text>}
+                  >
+                    <Select defaultValue="M">
+                      <Option value="M">M</Option>
+                      <Option value="F">F</Option>
+                    </Select>
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Height</Text>}
+                  >
+                    <Row gutter={8}>
+                      <Col span={12}>
+                        <InputNumber style={{ width: "100%" }} />
+                      </Col>
+                      <Col span={12}>
+                        <Select defaultValue="ft">
+                          <Option value="ft">ft</Option>
+                          <Option value="in">in</Option>
+                        </Select>
+                      </Col>
+                    </Row>
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Weight</Text>}
+                  >
+                    <Row gutter={8}>
+                      <Col span={12}>
+                        <InputNumber style={{ width: "100%" }} />
+                      </Col>
+                      <Col span={12}>
+                        <Select defaultValue="lbs">
+                          <Option value="lbs">lbs</Option>
+                          <Option value="kg">kg</Option>
+                        </Select>
+                      </Col>
+                    </Row>
+                  </Form.Item>
+                </Form>
+              </Card>
+            </Col>
+
+            {/* Medical Information */}
+            <Col span={8}>
+              <Card
+                title="Medical Information"
+                size="small"
+                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
+                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
+                bodyStyle={{ backgroundColor: "#3a3a3a" }}
+              >
+                <Form layout="vertical" size="small">
+                  <Form.Item
+                    label={
+                      <Text style={{ color: "white" }}>
+                        Admitting Diagnosis
+                      </Text>
+                    }
+                  >
+                    <TextArea rows={3} />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Procedure</Text>}
+                  >
+                    <TextArea rows={2} />
+                  </Form.Item>
+                </Form>
+
+                <Divider style={{ borderColor: "#555", margin: "16px 0" }} />
+
+                <div style={{ marginBottom: "16px" }}>
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    Alerts
+                  </Text>
+                  <Card
+                    size="small"
+                    style={{ backgroundColor: "#4a4a4a", marginTop: "8px" }}
+                  >
+                    <Form.Item
+                      label={
+                        <Text style={{ color: "white" }}>Medical Alerts</Text>
+                      }
+                    >
+                      <TextArea rows={2} />
+                    </Form.Item>
+                    <Form.Item
+                      label={<Text style={{ color: "white" }}>Allergies</Text>}
+                    >
+                      <TextArea rows={2} />
+                    </Form.Item>
+                  </Card>
                 </div>
+
+                <Divider style={{ borderColor: "#555", margin: "16px 0" }} />
+
                 <div>
-                  <Text>Volume:</Text>
-                  <Slider defaultValue={30} />
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    Institution
+                  </Text>
+                  <Form
+                    layout="vertical"
+                    size="small"
+                    style={{ marginTop: "8px" }}
+                  >
+                    <Form.Item
+                      label={
+                        <Text style={{ color: "white" }}>Institution Name</Text>
+                      }
+                    >
+                      <Input defaultValue="UCLA Psyc" />
+                    </Form.Item>
+                    <Form.Item
+                      label={
+                        <Text style={{ color: "white" }}>
+                          Performing Physician
+                        </Text>
+                      }
+                    >
+                      <Input />
+                    </Form.Item>
+                    <Form.Item
+                      label={
+                        <Text style={{ color: "white" }}>
+                          Referring Physician
+                        </Text>
+                      }
+                    >
+                      <Input />
+                    </Form.Item>
+                    <Form.Item
+                      label={
+                        <Text style={{ color: "white" }}>
+                          Requesting Physician
+                        </Text>
+                      }
+                    >
+                      <Input />
+                    </Form.Item>
+                    <Form.Item
+                      label={<Text style={{ color: "white" }}>Operator</Text>}
+                    >
+                      <Input />
+                    </Form.Item>
+                  </Form>
                 </div>
+              </Card>
+            </Col>
+
+            {/* Examination Information & Program Selection */}
+            <Col span={8}>
+              <Card
+                title="Examination Information"
+                size="small"
+                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
+                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
+                bodyStyle={{ backgroundColor: "#3a3a3a" }}
+              >
+                <Form layout="vertical" size="small">
+                  <Form.Item
+                    label={
+                      <Text style={{ color: "white" }}>Accession Nr.</Text>
+                    }
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={<Text style={{ color: "white" }}>Real Proc ID</Text>}
+                  >
+                    <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label={
+                      <Text style={{ color: "white" }}>Study Description</Text>
+                    }
+                  >
+                    <Input defaultValue="LEE 35 channel" />
+                  </Form.Item>
+                  <Form.Item
+                    label={
+                      <Text style={{ color: "white" }}>Study Comment</Text>
+                    }
+                  >
+                    <TextArea rows={2} />
+                  </Form.Item>
+                </Form>
+              </Card>
+
+              <Card
+                title="Program Selection"
+                size="small"
+                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
+                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
+                bodyStyle={{ backgroundColor: "#3a3a3a" }}
+              >
+                <div style={{ marginBottom: "16px" }}>
+                  <Text style={{ color: "white" }}>
+                    USER - LEE - 35 channel - Any Prog...
+                  </Text>
+                  <div style={{ marginTop: "8px" }}>
+                    <Checkbox style={{ color: "white" }}>
+                      Load Program to Queue
+                    </Checkbox>
+                  </div>
+                </div>
+
+                <Divider style={{ borderColor: "#555", margin: "16px 0" }} />
+
+                <div style={{ marginBottom: "16px" }}>
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    RF Transmit Mode
+                  </Text>
+                  <Select
+                    defaultValue="Brain"
+                    style={{ width: "100%", marginTop: "8px" }}
+                  >
+                    <Option value="Brain">Brain</Option>
+                    <Option value="Body">Body</Option>
+                    <Option value="Head">Head</Option>
+                  </Select>
+                </div>
+
+                <div style={{ marginBottom: "16px" }}>
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    Body Part and Laterality
+                  </Text>
+                  <div style={{ marginTop: "8px" }}>
+                    <Row gutter={8}>
+                      <Col span={12}>
+                        <Select defaultValue="Brain" style={{ width: "100%" }}>
+                          <Option value="Brain">Brain</Option>
+                          <Option value="Head">Head</Option>
+                          <Option value="Spine">Spine</Option>
+                        </Select>
+                      </Col>
+                      <Col span={12}>
+                        <Select
+                          defaultValue="Unpaired"
+                          style={{ width: "100%" }}
+                        >
+                          <Option value="Unpaired">Unpaired</Option>
+                          <Option value="Left">Left</Option>
+                          <Option value="Right">Right</Option>
+                        </Select>
+                      </Col>
+                    </Row>
+                    <Select
+                      defaultValue="Select"
+                      style={{ width: "100%", marginTop: "8px" }}
+                    >
+                      <Option value="Select">Select</Option>
+                      <Option value="Option1">Option 1</Option>
+                      <Option value="Option2">Option 2</Option>
+                    </Select>
+                  </div>
+                </div>
+
                 <div>
-                  <Text>Progress:</Text>
-                  <Progress percent={75} status="active" />
+                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                    Patient Orientation
+                  </Text>
+                  <Select
+                    defaultValue="Select"
+                    style={{ width: "100%", marginTop: "8px" }}
+                  >
+                    <Option value="Select">Select</Option>
+                    <Option value="Supine">Supine</Option>
+                    <Option value="Prone">Prone</Option>
+                  </Select>
                 </div>
+              </Card>
+            </Col>
+          </Row>
+
+          {/* Bottom Action Bar */}
+          <Card
+            style={{ backgroundColor: "#3a3a3a", marginTop: "16px" }}
+            bodyStyle={{ backgroundColor: "#3a3a3a" }}
+          >
+            <Row justify="space-between" align="middle">
+              <Col>
+                <Text style={{ color: "white" }}>
+                  Safety relevant information needs to be valid and confirmed. ★
+                  Manifestation
+                </Text>
+              </Col>
+              <Col>
                 <Space>
-                  <Button type="primary" icon={<SearchOutlined />}>
-                    Search
-                  </Button>
-                  <Tooltip title="This is a tooltip">
-                    <Button icon={<HomeOutlined />}>Home</Button>
-                  </Tooltip>
+                  <Button icon={<SaveOutlined />}>Save</Button>
+                  <Button>Cancel</Button>
+                  <Button icon={<DeleteOutlined />}>Delete</Button>
+                  <Button type="primary">Local Data</Button>
+                  <Button>Prior</Button>
                 </Space>
-              </Space>
-            </Card>
-          </Col>
-
-          {/* Display Components */}
-          <Col xs={24} md={12} lg={8}>
-            <Card title="Display Elements">
-              <Space direction="vertical" style={{ width: "100%" }}>
-                <Alert
-                  message="Success Tips"
-                  description="Detailed description and advice about successful copywriting."
-                  type="success"
-                  showIcon
-                />
-                <div>
-                  <Badge count={99} overflowCount={99}>
-                    <Avatar
-                      shape="square"
-                      size="large"
-                      icon={<PhoneOutlined />}
-                    />
-                  </Badge>
-                </div>
-                <Divider>Statistics</Divider>
-                <div style={{ textAlign: "center" }}>
-                  <Title level={3} style={{ margin: "8px 0" }}>
-                    2,048
-                  </Title>
-                  <Text type="secondary">Total Users</Text>
-                </div>
-              </Space>
-            </Card>
-          </Col>
-        </Row>
-
-        {/* Footer */}
-        <Card style={{ marginTop: "24px", textAlign: "center" }}>
-          <Paragraph>
-            <Text type="secondary">
-              Built with ❤️ using Ant Design. Explore the{" "}
-              <Text code>components</Text> to build amazing interfaces.
-            </Text>
-          </Paragraph>
-        </Card>
-      </div>
-    </div>
+              </Col>
+            </Row>
+            <div style={{ textAlign: "right", marginTop: "8px" }}>
+              <Text style={{ color: "white", fontSize: "12px" }}>
+                6:43:11 PM
+              </Text>
+            </div>
+          </Card>
+        </Content>
+      </Layout>
+    </Layout>
   );
 };
 
