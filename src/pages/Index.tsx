@@ -504,6 +504,7 @@ const Index = () => {
                     >
                       Exam
                     </Button>
+                  </Space>
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
