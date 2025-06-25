@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Layout,
   Card,
@@ -7,7 +7,6 @@ import {
   Select,
   DatePicker,
   InputNumber,
-  Radio,
   Checkbox,
   Button,
   Typography,
@@ -16,17 +15,11 @@ import {
   Row,
   Col,
   Table,
-  Tag,
-  Alert,
-  Switch,
 } from "antd";
 import {
   SearchOutlined,
   SaveOutlined,
   DeleteOutlined,
-  UserOutlined,
-  MedicineBoxOutlined,
-  ExperimentOutlined,
 } from "@ant-design/icons";
 
 const { Sider, Content, Header } = Layout;
@@ -35,9 +28,6 @@ const { Option } = Select;
 const { TextArea } = Input;
 
 const Index = () => {
-  const [form] = Form.useForm();
-  const [selectedPatient, setSelectedPatient] = useState("VidOps");
-
   const patients = [
     { key: "1", patient: "VidOps", procedure: "4/28/2022, 20:41" },
   ];
