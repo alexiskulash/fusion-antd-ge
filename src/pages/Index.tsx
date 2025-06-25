@@ -73,7 +73,7 @@ const Index = () => {
       </Header>
 
       <Layout>
-        <Sider width={240} style={{ backgroundColor: "#3a3a3a" }}>
+        <Sider width={240} breakpoint="lg" collapsedWidth="0" style={{ backgroundColor: "#3a3a3a" }}>
           <div style={{ padding: "16px", color: "white" }}>
             <div style={{ marginBottom: "16px" }}>
               <Text style={{ color: "white", fontSize: "14px" }}>Patients</Text>
