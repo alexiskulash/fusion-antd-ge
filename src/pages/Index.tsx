@@ -511,7 +511,7 @@ const Index = () => {
                 6:43:11 PM
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
-          </Card>
+              </Text>
         </Content>
       </Layout>
     </Layout>
