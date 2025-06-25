@@ -478,7 +478,7 @@ const Index = () => {
                   </Col>
                   <Col>
                     <Space size="middle">
-                      <Button.Group>
+                      <Button.Group style={{ margin: "0 1.5em 0 2em", justifyContent: "center", alignItems: "flex-start" }}>
                         <Button
                           style={{
                             backgroundColor: "#595959",
