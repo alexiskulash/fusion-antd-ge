@@ -447,23 +447,70 @@ const Index = () => {
                 </Text>
               </Col>
               <Col>
-                <Space size="middle">
-                  <Button icon={<SaveOutlined />}>Save</Button>
-                  <Button>Cancel</Button>
-                  <Button icon={<DeleteOutlined />}>Delete</Button>
-                  <Button type="primary">Local Data</Button>
-                  <Button>Prior Studies</Button>
-                  <Button
-                    type="primary"
-                    style={{
-                      backgroundColor: "#ff7f00",
-                      borderColor: "#ff7f00",
-                      boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
-                    }}
-                  >
-                    Exam
-                  </Button>
-                </Space>
+                <Row
+                  justify="space-between"
+                  align="middle"
+                  style={{ width: "100%" }}
+                >
+                  <Col>
+                    <Space size="middle">
+                      <Button
+                        icon={<SaveOutlined />}
+                        style={{
+                          backgroundColor: "#f5f5f5",
+                          borderColor: "#d9d9d9",
+                          color: "#000",
+                        }}
+                      >
+                        Save
+                      </Button>
+                      <Button
+                        style={{
+                          backgroundColor: "#f5f5f5",
+                          borderColor: "#d9d9d9",
+                          color: "#000",
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                      <Button icon={<DeleteOutlined />}>Delete</Button>
+                    </Space>
+                  </Col>
+                  <Col>
+                    <Space size="middle">
+                      <Button.Group>
+                        <Button
+                          style={{
+                            backgroundColor: "#595959",
+                            borderColor: "#595959",
+                            color: "white",
+                          }}
+                        >
+                          Local Data
+                        </Button>
+                        <Button
+                          style={{
+                            backgroundColor: "#595959",
+                            borderColor: "#595959",
+                            color: "white",
+                          }}
+                        >
+                          Prior Studies
+                        </Button>
+                      </Button.Group>
+                      <Button
+                        type="primary"
+                        style={{
+                          backgroundColor: "#ff7f00",
+                          borderColor: "#ff7f00",
+                          boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                        }}
+                      >
+                        Exam
+                      </Button>
+                    </Space>
+                  </Col>
+                </Row>
               </Col>
             </Row>
             <div style={{ textAlign: "right", marginTop: "8px" }}>
