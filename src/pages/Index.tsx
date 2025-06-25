@@ -318,13 +318,6 @@ const Index = () => {
 
             <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
-                title="Examination Information"
-                size="small"
-                style={{ backgroundColor: "#3a3a3a", marginBottom: "16px" }}
-                headStyle={{ color: "white", backgroundColor: "#2a2a2a" }}
-                bodyStyle={{ backgroundColor: "#3a3a3a" }}
-              >
-                <Form layout="vertical" size="small">
                   <Form.Item
                     label={
                       <Text style={{ color: "white" }}>Accession Nr.</Text>
@@ -510,13 +503,6 @@ const Index = () => {
                         boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
                       }}
                     >
-                      Exam
-                    </Button>
-                  </Space>
-                </Col>
-              </Row>
-            </div>
-            <div style={{ textAlign: "right", marginTop: "8px" }}>
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
