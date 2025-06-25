@@ -38,7 +38,6 @@ const Index = () => {
   const [form] = Form.useForm();
   const [selectedPatient, setSelectedPatient] = useState("VidOps");
 
-  // Sample patient data
   const patients = [
     { key: "1", patient: "VidOps", procedure: "4/28/2022, 20:41" },
   ];
@@ -58,7 +57,6 @@ const Index = () => {
 
   return (
     <Layout style={{ minHeight: "100vh", backgroundColor: "#2c2c2c" }}>
-      {/* Header */}
       <Header
         style={{
           backgroundColor: "#1f1f1f",
@@ -85,7 +83,6 @@ const Index = () => {
       </Header>
 
       <Layout>
-        {/* Left Sidebar - Patient List */}
         <Sider width={240} style={{ backgroundColor: "#3a3a3a" }}>
           <div style={{ padding: "16px", color: "white" }}>
             <div style={{ marginBottom: "16px" }}>
@@ -117,10 +114,8 @@ const Index = () => {
           </div>
         </Sider>
 
-        {/* Main Content Area */}
         <Content style={{ padding: "16px", backgroundColor: "#2c2c2c" }}>
           <Row gutter={16}>
-            {/* VidOps Section */}
             <Col span={8}>
               <Card
                 title="VidOps"
@@ -221,7 +216,6 @@ const Index = () => {
               </Card>
             </Col>
 
-            {/* Medical Information */}
             <Col span={8}>
               <Card
                 title="Medical Information"
@@ -327,7 +321,6 @@ const Index = () => {
               </Card>
             </Col>
 
-            {/* Examination Information & Program Selection */}
             <Col span={8}>
               <Card
                 title="Examination Information"
@@ -452,7 +445,6 @@ const Index = () => {
             </Col>
           </Row>
 
-          {/* Bottom Action Bar */}
           <Card
             style={{ backgroundColor: "#3a3a3a", marginTop: "16px" }}
             bodyStyle={{ backgroundColor: "#3a3a3a" }}
