@@ -502,6 +502,7 @@ const Index = () => {
                         boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
                       }}
                     >
+                      Exam
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
