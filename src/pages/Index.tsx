@@ -501,7 +501,7 @@ const Index = () => {
                       >
                         Prior Studies
                       </Button>
-                    </Button.Group>
+                    
                     <Button
                       type="primary"
                       style={{
