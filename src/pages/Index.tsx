@@ -137,7 +137,6 @@ const Index = () => {
                 columns={patientColumns}
                 size="small"
                 pagination={false}
-                style={{ backgroundColor: "#4a4a4a" }}
                 rowSelection={{
                   type: "radio",
                   selectedRowKeys: ["1"],
