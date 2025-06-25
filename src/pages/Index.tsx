@@ -440,19 +440,19 @@ const Index = () => {
             bodyStyle={{ backgroundColor: "#3a3a3a" }}
           >
             <Row justify="space-between" align="middle">
-              <Col>
+              <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Text style={{ color: "white" }}>
                   Safety relevant information needs to be valid and confirmed. ★
                   Mandatory Information
                 </Text>
               </Col>
-              <Col>
+              <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Row
                   justify="space-between"
                   align="middle"
                   style={{ width: "100%" }}
                 >
-                  <Col>
+                  <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                     <Space size="middle">
                       <Button
                         icon={<SaveOutlined />}
@@ -476,7 +476,7 @@ const Index = () => {
                       <Button icon={<DeleteOutlined />}>Delete</Button>
                     </Space>
                   </Col>
-                  <Col>
+                  <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                     <Space size="middle">
                       <Button.Group style={{ margin: "0 1.5em 0 2em", justifyContent: "center", alignItems: "flex-start" }}>
                         <Button
