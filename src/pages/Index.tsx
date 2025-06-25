@@ -508,7 +508,6 @@ const Index = () => {
                 </Col>
               </Row>
             </div>
-              <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
             </div>
