@@ -500,7 +500,7 @@ const Index = () => {
                       style={{
                         backgroundColor: "#ff7f00",
                       >
-                        boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                        Exam
                       }}
                     >
               <Text style={{ color: "white", fontSize: "12px" }}>
