@@ -499,7 +499,7 @@ const Index = () => {
                       type="primary"
                       style={{
                         backgroundColor: "#ff7f00",
-                      >
+                        Exam
               <Text style={{ color: "white", fontSize: "12px" }}>
                 6:43:11 PM
               </Text>
