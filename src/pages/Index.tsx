@@ -439,7 +439,7 @@ const Index = () => {
             style={{ backgroundColor: "#3a3a3a", marginTop: "16px" }}
             bodyStyle={{ backgroundColor: "#3a3a3a" }}
           >
-            <Row justify="space-between" align="middle">
+            <div>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Text style={{ color: "white" }}>
                   Safety relevant information needs to be valid and confirmed. ★
