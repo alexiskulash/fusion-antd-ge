@@ -520,7 +520,6 @@ const Index = () => {
           </Card>
         </Content>
       </Layout>
-    </Layout>
   );
 };
 
