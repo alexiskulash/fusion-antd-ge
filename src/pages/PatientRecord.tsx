@@ -5,7 +5,6 @@ import {
   Form,
   Input,
   Select,
-  DatePicker,
   Checkbox,
   Button,
   Typography,
@@ -14,21 +13,14 @@ import {
   Col,
   Table,
   Tabs,
-  Progress,
   Tag,
   Divider,
 } from "antd";
-import {
-  SearchOutlined,
-  RefreshOutlined,
-  DownloadOutlined,
-  PlayCircleOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined, PlayCircleOutlined } from "@ant-design/icons";
 
 const { Content, Header, Sider } = Layout;
-const { Text, Title } = Typography;
+const { Text } = Typography;
 const { Option } = Select;
-const { TabPane } = Tabs;
 
 const PatientRecord = () => {
   const [selectedRows, setSelectedRows] = useState(["1"]);
@@ -122,6 +114,21 @@ const PatientRecord = () => {
     { label: "Ave Wrng", value: "8.00", unit: "V" },
   ];
 
+  const tabItems = [
+    {
+      key: "schedule",
+      label: "Schedule",
+    },
+    {
+      key: "archive",
+      label: "Archive",
+    },
+    {
+      key: "settings",
+      label: "Settings",
+    },
+  ];
+
   return (
     <Layout style={{ minHeight: "100vh", backgroundColor: "#4a5568" }}>
       {/* Top Header */}
@@ -135,17 +142,12 @@ const PatientRecord = () => {
       >
         <Row justify="space-between" align="middle">
           <Col>
-            <Space>
-              <Tabs
-                defaultActiveKey="schedule"
-                size="small"
-                style={{ margin: 0 }}
-              >
-                <TabPane tab="Schedule" key="schedule" />
-                <TabPane tab="Archive" key="archive" />
-                <TabPane tab="Settings" key="settings" />
-              </Tabs>
-            </Space>
+            <Tabs
+              defaultActiveKey="schedule"
+              size="small"
+              items={tabItems}
+              className="header-tabs"
+            />
           </Col>
           <Col>
             <Space>
@@ -258,6 +260,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Name:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -272,6 +275,7 @@ const PatientRecord = () => {
                     <Row gutter={8}>
                       <Col span={4}>
                         <Input
+                          className="dark-input"
                           style={{
                             backgroundColor: "#4a5568",
                             borderColor: "#718096",
@@ -282,6 +286,7 @@ const PatientRecord = () => {
                       </Col>
                       <Col span={20}>
                         <Input
+                          className="dark-input"
                           style={{
                             backgroundColor: "#4a5568",
                             borderColor: "#718096",
@@ -299,7 +304,7 @@ const PatientRecord = () => {
                     <Select
                       defaultValue="M"
                       style={{ width: "100%" }}
-                      dropdownStyle={{ backgroundColor: "#2d3748" }}
+                      className="dark-select"
                     >
                       <Option value="M">M</Option>
                       <Option value="F">F</Option>
@@ -310,6 +315,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Age:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -325,6 +331,7 @@ const PatientRecord = () => {
                     }
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -338,6 +345,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Accessed:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -365,6 +373,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Accession:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -377,6 +386,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Exam:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -389,6 +399,7 @@ const PatientRecord = () => {
                     label={<Text style={{ color: "white" }}>Description:</Text>}
                   >
                     <Input
+                      className="dark-input"
                       style={{
                         backgroundColor: "#4a5568",
                         borderColor: "#718096",
@@ -405,7 +416,7 @@ const PatientRecord = () => {
                     <Select
                       defaultValue="Radiologist"
                       style={{ width: "100%" }}
-                      dropdownStyle={{ backgroundColor: "#2d3748" }}
+                      className="dark-select"
                     >
                       <Option value="Radiologist">Radiologist</Option>
                       <Option value="Technician">Technician</Option>
@@ -474,7 +485,7 @@ const PatientRecord = () => {
                     <Select
                       defaultValue="NONE"
                       style={{ width: "100%", marginTop: "4px" }}
-                      dropdownStyle={{ backgroundColor: "#2d3748" }}
+                      className="dark-select"
                     >
                       <Option value="NONE">NONE</Option>
                       <Option value="YES">YES</Option>
@@ -487,7 +498,7 @@ const PatientRecord = () => {
                     <Select
                       defaultValue="No Entry"
                       style={{ width: "100%", marginTop: "4px" }}
-                      dropdownStyle={{ backgroundColor: "#2d3748" }}
+                      className="dark-select"
                     >
                       <Option value="No Entry">No Entry</Option>
                       <Option value="History Available">
@@ -741,74 +752,6 @@ const PatientRecord = () => {
           </div>
         </Sider>
       </Layout>
-
-      <style>{`
-        .patient-record-table .ant-table-thead > tr > th {
-          background-color: #718096 !important;
-          color: white !important;
-          border-bottom: 1px solid #4a5568 !important;
-          font-size: 12px !important;
-          padding: 4px 8px !important;
-        }
-        
-        .patient-record-table .ant-table-tbody > tr > td {
-          background-color: #e2e8f0 !important;
-          color: #2d3748 !important;
-          border-bottom: 1px solid #cbd5e0 !important;
-          font-size: 12px !important;
-          padding: 4px 8px !important;
-        }
-        
-        .patient-record-table .ant-table-tbody > tr:hover > td {
-          background-color: #cbd5e0 !important;
-        }
-
-        .ant-tabs-nav {
-          margin-bottom: 0 !important;
-        }
-
-        .ant-tabs-tab {
-          color: #a0aec0 !important;
-          background-color: #4a5568 !important;
-          border: 1px solid #718096 !important;
-          border-radius: 4px 4px 0 0 !important;
-          margin-right: 2px !important;
-        }
-
-        .ant-tabs-tab-active {
-          color: white !important;
-          background-color: #2d3748 !important;
-          border-color: #2d3748 !important;
-        }
-
-        .ant-tabs-ink-bar {
-          display: none !important;
-        }
-
-        .ant-input {
-          background-color: #4a5568 !important;
-          border-color: #718096 !important;
-          color: white !important;
-        }
-
-        .ant-input::placeholder {
-          color: #a0aec0 !important;
-        }
-
-        .ant-select-selector {
-          background-color: #4a5568 !important;
-          border-color: #718096 !important;
-          color: white !important;
-        }
-
-        .ant-select-selection-item {
-          color: white !important;
-        }
-
-        .ant-select-arrow {
-          color: #a0aec0 !important;
-        }
-      `}</style>
     </Layout>
   );
 };
