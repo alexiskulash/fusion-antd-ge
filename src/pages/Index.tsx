@@ -106,7 +106,7 @@ const Index = () => {
 
         <Content style={{ padding: "16px", backgroundColor: "#2c2c2c" }}>
           <Row gutter={16}>
-            <Col span={8}>
+            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
                 title="VidOps"
                 size="small"
@@ -151,7 +151,7 @@ const Index = () => {
                     }
                   >
                     <Row gutter={8}>
-                      <Col span={8}>
+                      <Col xs={24} sm={24} md={24} lg={8} xl={8}>
                         <Input placeholder="MM/yyyy" />
                       </Col>
                       <Col span={16}>
@@ -206,7 +206,7 @@ const Index = () => {
               </Card>
             </Col>
 
-            <Col span={8}>
+            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
                 title="Medical Information"
                 size="small"
@@ -311,7 +311,7 @@ const Index = () => {
               </Card>
             </Col>
 
-            <Col span={8}>
+            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <Card
                 title="Examination Information"
                 size="small"
