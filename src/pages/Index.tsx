@@ -456,7 +456,7 @@ const Index = () => {
                 align="middle"
                 style={{ width: "100%" }}
               >
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                <Col xs={18} sm={18} md={18} lg={18} xl={18}>
                   <Space size="middle" wrap>
                     <Button
                       icon={<SaveOutlined />}
@@ -480,7 +480,7 @@ const Index = () => {
                     <Button icon={<DeleteOutlined />}>Delete</Button>
                   </Space>
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                <Col xs={18} sm={18} md={18} lg={18} xl={18}>
                   <Space size="middle" wrap>
                     
                       <Button
