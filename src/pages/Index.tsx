@@ -509,7 +509,6 @@ const Index = () => {
               </Row>
             </div>
                 6:43:11 PM
-            <div style={{ textAlign: "right", marginTop: "8px" }}>
               <Text style={{ color: "white", fontSize: "12px" }}>
             </div>
           </Card>
