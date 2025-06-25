@@ -453,7 +453,16 @@ const Index = () => {
                   <Button icon={<DeleteOutlined />}>Delete</Button>
                   <Button type="primary">Local Data</Button>
                   <Button>Prior Studies</Button>
-                  <Button style={{ backgroundColor: "#ff7f00", borderColor: "#ff7f00", color: "white" }}>Exam</Button>
+                  <Button
+                    type="primary"
+                    style={{
+                      backgroundColor: "#ff7f00",
+                      borderColor: "#ff7f00",
+                      boxShadow: "0 2px 0 rgba(255, 127, 0, 0.1)",
+                    }}
+                  >
+                    Exam
+                  </Button>
                 </Space>
               </Col>
             </Row>
