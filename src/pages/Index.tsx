@@ -461,18 +461,18 @@ const Index = () => {
                     <Button
                       icon={<SaveOutlined />}
                       style={{
-                        backgroundColor: "#f5f5f5",
-                        borderColor: "#d9d9d9",
-                        color: "#000",
+                        backgroundColor: "#4a4a4a",
+                        borderColor: "#666",
+                        color: "white",
                       }}
                     >
                       Save
                     </Button>
                     <Button
                       style={{
-                        backgroundColor: "#f5f5f5",
-                        borderColor: "#d9d9d9",
-                        color: "#000",
+                        backgroundColor: "#4a4a4a",
+                        borderColor: "#666",
+                        color: "white",
                       }}
                     >
                       Cancel
