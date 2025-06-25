@@ -482,7 +482,7 @@ const Index = () => {
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                   <Space size="middle" wrap>
-                    <Button.Group>
+                    
                       <Button
                         style={{
                           backgroundColor: "#595959",
