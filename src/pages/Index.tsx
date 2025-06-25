@@ -447,12 +447,13 @@ const Index = () => {
                 </Text>
               </Col>
               <Col>
-                <Space>
+                <Space size="middle">
                   <Button icon={<SaveOutlined />}>Save</Button>
                   <Button>Cancel</Button>
                   <Button icon={<DeleteOutlined />}>Delete</Button>
                   <Button type="primary">Local Data</Button>
-                  <Button>Prior</Button>
+                  <Button>Prior Data</Button>
+                  <Button>Prior Data</Button>
                 </Space>
               </Col>
             </Row>
