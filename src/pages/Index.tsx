@@ -15,6 +15,8 @@ import {
   Row,
   Col,
   Table,
+  ConfigProvider,
+  theme,
 } from "antd";
 import {
   SearchOutlined,
