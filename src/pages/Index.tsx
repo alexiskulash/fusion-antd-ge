@@ -176,10 +176,10 @@ const Index = () => {
                     label={<Text style={{ color: "white" }}>Height</Text>}
                   >
                     <Row gutter={8}>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <InputNumber style={{ width: "100%" }} />
                       </Col>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Select defaultValue="ft">
                           <Option value="ft">ft</Option>
                           <Option value="in">in</Option>
@@ -191,10 +191,10 @@ const Index = () => {
                     label={<Text style={{ color: "white" }}>Weight</Text>}
                   >
                     <Row gutter={8}>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <InputNumber style={{ width: "100%" }} />
                       </Col>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Select defaultValue="lbs">
                           <Option value="lbs">lbs</Option>
                           <Option value="kg">kg</Option>
@@ -389,14 +389,14 @@ const Index = () => {
                   </Text>
                   <div style={{ marginTop: "8px" }}>
                     <Row gutter={8}>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Select defaultValue="Brain" style={{ width: "100%" }}>
                           <Option value="Brain">Brain</Option>
                           <Option value="Head">Head</Option>
                           <Option value="Spine">Spine</Option>
                         </Select>
                       </Col>
-                      <Col span={12}>
+                      <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <Select
                           defaultValue="Unpaired"
                           style={{ width: "100%" }}
