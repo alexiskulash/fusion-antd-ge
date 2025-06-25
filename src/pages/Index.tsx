@@ -445,7 +445,7 @@ const Index = () => {
                   Safety relevant information needs to be valid and confirmed. ★
                   Mandatory Information
                 </Text>
-              </Col>
+              </div>
               <div style={{ marginBottom: "16px" }}>
                 <Row
                   justify="space-between"
