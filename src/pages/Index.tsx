@@ -443,7 +443,7 @@ const Index = () => {
               <Col>
                 <Text style={{ color: "white" }}>
                   Safety relevant information needs to be valid and confirmed. ★
-                  Manifestation
+                  Mandatory Information
                 </Text>
               </Col>
               <Col>
